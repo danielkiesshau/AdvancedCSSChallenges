@@ -9,7 +9,8 @@
   url(../img/hero.jpg);
   background-size: cover;
   background-position: top; /* Keep the top part of the image visible when the image is resized */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*  https://bennettfeely.com/clippy/ */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*  https://bennettfeely.com/clippy/ */
 
   &__logo-box {
     position: absolute;
