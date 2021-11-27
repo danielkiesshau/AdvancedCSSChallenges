@@ -15,6 +15,16 @@
     cursor: pointer;
     top: 6rem;
     right: 6rem;
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__background {
@@ -22,11 +32,21 @@
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
-    top: 6.5rem;
-    right: 6.5rem;
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 1000;
+    top: 6.5rem;
+    right: 6.5rem;
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1); // https://easings.net, https://cubic-bezier.com/#.17,.67,.83,.67
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
