@@ -24,13 +24,19 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    // place text arround circle
-    -webkit-shape-outside: circle(50% at 50% 50%); // has to be float, has height and width to work
-    shape-outside: circle(50% at 50% 50%); // 50% radius and center of the component
-    // actual circle
-    -webkit-clip-path: circle(50% at 50% 50%); 
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      // place text arround circle
+      -webkit-shape-outside: circle(50% at 50% 50%); // has to be float, has height and width to work
+      shape-outside: circle(50% at 50% 50%); // 50% radius and center of the component
+      // actual circle
+      -webkit-clip-path: circle(50% at 50% 50%); 
+      clip-path: circle(50% at 50% 50%);
+      border-radius: none;
+    }
 
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
